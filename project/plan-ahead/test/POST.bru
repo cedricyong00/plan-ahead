@@ -1,0 +1,26 @@
+meta {
+  name: POST
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.airtable.com/v0/appq8DCLQI9VU4lCa/Add
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: patIeXch1IgcD9o7c.0ecfdfe831ce1fa08576e00efaac29fd77b67ec59b7988096f1cf072cd2c1666
+}
+
+body:json {
+  {
+    "fields": {
+          "Day": "Tuesday",
+          "Remarks": "Discuss Budget",
+          "Title": "Meeting with B",
+          "Date": "2023-11-26"
+    }
+  }
+}

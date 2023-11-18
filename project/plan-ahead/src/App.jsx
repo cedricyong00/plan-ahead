@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import HolidayList from './holidayList'
-
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
+import "./App.css";
+import HolidayList from "./holidayList";
 
 function App() {
-
   return (
     <>
-    <HolidayList />
+      <HolidayList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

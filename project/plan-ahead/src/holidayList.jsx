@@ -1,52 +1,61 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
+import HolidayTable from "./holidayTable";
 
-function HolidayList () {
+function HolidayList() {
+  const [holiday, setHoliday] = useState([]);
 
-    const [holiday, setHoliday] = useState([]);
+  //Holiday API
+  const apiUrl = new URL("https://holidayapi.com/v1/holidays");
+  apiUrl.search = new URLSearchParams({
+    key: "abdcc0ed-7e2c-4dad-820a-cb4f94c5c1f6",
+    country: "SG",
+    year: 2022,
+    public: true,
+  });
 
-    //Holiday API
-    const apiUrl = new URL("https://holidayapi.com/v1/holidays")
-      apiUrl.search = new URLSearchParams({
-        key: "2a4d8a45-d7bc-4753-9748-a86b7841984e",
-        country: "SG",
-        year: 2022,
-      });
+  // Table CSS style
+  const divStyle = {
+    border: "2px solid teal",
+    overflow: "auto",
+    height: "300px",
+  };
 
-      // fetches data every time page renders
-      useEffect(() => {
-        async function fetchHoliday() {
-          const response = await fetch(apiUrl);
-          const jsonData = await response.json();
-          setHoliday(jsonData.holidays);
-        }
-        fetchHoliday();
-      }, []);
+  // Talbe font style
+  const fontStyle = {
+    color: "black",
+    fontSize: "30px",
+  };
 
-    return (
-        <>
-        <h1>Upcoming Schedule</h1>
-        <table>
-        <tbody>
-          {holiday.map((holidayElement) => {
-            {/* To convert date string into names of the month and day */}
-            {/* Month */}
-            const date = new Date(holidayElement.observed);
-            const month = date.getMonth();
-            const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-          
-            // Date
-            const day = date.getDate();
-            return (
-              <tr key={holidayElement.uuid} className="TableOfDates">
-                <td> {holidayElement.name}</td>
-                <td>{(monthNames[month])} {(day)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-        </>
-    )
+  // fetches data every time page renders
+  useEffect(() => {
+    async function fetchHoliday() {
+      const response = await fetch(apiUrl);
+      const jsonData = await response.json();
+      setHoliday(jsonData.holidays);
+    }
+    fetchHoliday();
+  }, []);
+
+  return (
+    <>
+      <h1 style={fontStyle}>Upcoming Holidays</h1>
+      <div style={divStyle}>
+        <HolidayTable holiday={holiday} />
+      </div>
+    </>
+  );
 }
 
-export default HolidayList
+export default HolidayList;
