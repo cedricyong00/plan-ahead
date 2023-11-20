@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 function HolidayTable({ holiday }) {
+  // To convert date string into names of the month and day
   const monthNames = [
     "January",
     "February",
@@ -39,9 +40,6 @@ function HolidayTable({ holiday }) {
         <Tbody>
           {holiday.map((holidayElement) => {
             {
-              /* To convert date string into names of the month and day */
-            }
-            {
               /* Month */
             }
             const date = new Date(holidayElement.observed);
@@ -49,6 +47,7 @@ function HolidayTable({ holiday }) {
 
             // Date
             const day = date.getDate();
+
             return (
               <Tr key={holidayElement.uuid}>
                 <Td> {holidayElement.name}</Td>

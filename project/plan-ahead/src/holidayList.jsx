@@ -1,16 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
-} from "@chakra-ui/react";
 import HolidayTable from "./holidayTable";
 
 function HolidayList() {
@@ -25,6 +14,24 @@ function HolidayList() {
     public: true,
   });
 
+  //Today's Date
+  const currentDay = new Date();
+  const currentMonth = currentDay.getMonth();
+  const currentDate = currentDay.getDate();
+
+  // Filtering past public holiday events
+  for (let i = 0; i < holiday.length; i++) {
+    // Month
+    const holidayDay = new Date(holiday[i].observed);
+    const holidayMonth = holidayDay.getMonth();
+
+    // Date
+    const holidayDate = holidayDay.getDate();
+    if (holidayMonth < currentMonth && holidayDate < currentDate) {
+      holiday.splice(i, i + 1);
+    }
+  }
+
   // Table CSS style
   const divStyle = {
     border: "2px solid teal",
@@ -32,7 +39,7 @@ function HolidayList() {
     height: "300px",
   };
 
-  // Talbe font style
+  // Table font style
   const fontStyle = {
     color: "black",
     fontSize: "30px",
