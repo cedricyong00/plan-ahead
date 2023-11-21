@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
 import "./App.css";
 import HolidayList from "./holidayList";
+import Weather from "./weather";
 
 function App() {
   return (
     <>
       <HolidayList />
+      <Weather />
     </>
   );
 }

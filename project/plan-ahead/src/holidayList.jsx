@@ -20,15 +20,22 @@ function HolidayList() {
   const currentDate = currentDay.getDate();
 
   // Filtering past public holiday events
-  for (let i = 0; i < holiday.length; i++) {
+  let i = 0;
+  while (i < holiday.length) {
     // Month
     const holidayDay = new Date(holiday[i].observed);
     const holidayMonth = holidayDay.getMonth();
 
     // Date
     const holidayDate = holidayDay.getDate();
-    if (holidayMonth < currentMonth && holidayDate < currentDate) {
+
+    if (
+      holidayMonth < currentMonth ||
+      (holidayMonth === currentMonth && holidayDate < currentDate)
+    ) {
       holiday.splice(i, i + 1);
+    } else {
+      i++;
     }
   }
 
@@ -37,6 +44,7 @@ function HolidayList() {
     border: "2px solid teal",
     overflow: "auto",
     height: "300px",
+    width: "350px"
   };
 
   // Table font style

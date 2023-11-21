@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+
 import {
   Table,
   Thead,
@@ -39,9 +40,7 @@ function HolidayTable({ holiday }) {
         </Thead>
         <Tbody>
           {holiday.map((holidayElement) => {
-            {
-              /* Month */
-            }
+            //  Month
             const date = new Date(holidayElement.observed);
             const month = date.getMonth();
 
