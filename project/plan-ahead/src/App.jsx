@@ -2,12 +2,14 @@
 import "./App.css";
 import HolidayList from "./holidayList";
 import Weather from "./weather";
+import PersonalPlan from "./personalPlan";
 
 function App() {
   return (
     <>
-      <HolidayList />
-      <Weather />
+      <PersonalPlan />
+      {/* <HolidayList />
+      <Weather /> */}
     </>
   );
 }
