@@ -1,0 +1,25 @@
+meta {
+  name: DELETE UPDATE
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://api.airtable.com/v0/appq8DCLQI9VU4lCa/Add/rec6QUYZ4XYfYYS45
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: patIeXch1IgcD9o7c.0ecfdfe831ce1fa08576e00efaac29fd77b67ec59b7988096f1cf072cd2c1666
+}
+
+body:json {
+  {
+    "fields": {
+      "Remarks": "Meeting with Zhao and Ende",
+      "Date": "2023-12-25",
+      "Event": "Update [Not Free]"
+    }
+  }
+}
