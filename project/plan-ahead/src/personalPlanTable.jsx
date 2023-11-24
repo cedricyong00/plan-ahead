@@ -10,7 +10,7 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 
-function PersonalPlanTable({ scheduleData, deleteSchedule }) {
+function PersonalPlanTable({ scheduleData, deleteSchedule, setScheduleData }) {
   //Array of days in a week
   const days = [
     "Monday",
@@ -24,6 +24,11 @@ function PersonalPlanTable({ scheduleData, deleteSchedule }) {
 
   function fetchID(id) {
     deleteSchedule(id);
+    setScheduleData((scheduleData) =>
+      scheduleData.filter((Data) => {
+        return Data.id !== id;
+      })
+    );
   }
 
   return (
