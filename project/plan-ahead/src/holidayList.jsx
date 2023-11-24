@@ -43,14 +43,15 @@ function HolidayList() {
   const divStyle = {
     border: "2px solid teal",
     overflow: "auto",
-    height: "300px",
-    width: "350px"
+    height: "240px",
+    width: "100%"
   };
 
   // Table font style
   const fontStyle = {
     color: "black",
-    fontSize: "30px",
+    fontSize: "15px",
+    padding: "20px"
   };
 
   // fetches data every time page renders

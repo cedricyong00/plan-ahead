@@ -8,14 +8,15 @@ function PersonalPlan({scheduleData, setScheduleData}) {
   // Table font style
   const fontStyle = {
     color: "black",
-    fontSize: "30px",
+    fontSize: "15px",
+    padding: "20px"
   };
 
   // Table CSS style
   const divStyle = {
     border: "2px solid teal",
     overflow: "auto",
-    height: "300px",
+    height: "240px",
   };
 
   // Function to delete record

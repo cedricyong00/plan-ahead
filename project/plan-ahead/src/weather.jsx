@@ -8,15 +8,16 @@ function Weather() {
   // Table font style
   const fontStyle = {
     color: "black",
-    fontSize: "30px",
+    fontSize: "15px",
+    padding: "20px"
   };
 
     // Table CSS style
     const divStyle = {
         border: "2px solid teal",
         overflow: "auto",
-        height: "300px",
-        width: "350px"
+        height: "240px",
+        width: "100%"
       };
 
   // Weather Data

@@ -6,6 +6,7 @@ import PersonalPlan from "./personalPlan";
 import { useState, useEffect } from "react";
 import CreatePlan from "./createPlan";
 import UpdatePlan from "./updatePlan";
+import { Route, Routes } from "react-router-dom";
 
 const navFontStyle = {
   fontSize: "5px",
@@ -40,16 +41,54 @@ function App() {
 
   return (
     <>
-      {/* <nav style={navFontStyle}>
-        <h1 className="NavHeader">Home</h1>
-        <h1 className="NavHeader">Add Plans</h1>
-        <h1 className="NavHeader">Update Plans</h1>
-      </nav> */}
-      {/* <PersonalPlan scheduleData={scheduleData} setScheduleData={setScheduleData} />
-      <HolidayList />
-      <Weather />
-      <CreatePlan scheduleData={scheduleData} setScheduleData={setScheduleData} fetchSchedule={fetchSchedule}/> */}
-      <UpdatePlan scheduleData={scheduleData} fetchSchedule={fetchSchedule}/>
+      <nav style={navFontStyle}>
+        <a href="/" className="NavHeader">
+          Home
+        </a>
+        <a href="/Add" className="NavHeader">
+          Add Plans
+        </a>
+        <a href="/Update" className="NavHeader">
+          Update Plans
+        </a>
+      </nav>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <PersonalPlan
+                scheduleData={scheduleData}
+                setScheduleData={setScheduleData}
+              />
+              <HolidayList />
+              <Weather />
+            </>
+          }
+        />
+
+        <Route
+          path="/Add"
+          element={
+            <CreatePlan
+              scheduleData={scheduleData}
+              setScheduleData={setScheduleData}
+              fetchSchedule={fetchSchedule}
+            />
+          }
+        />
+
+        <Route
+          path="/Update"
+          element={
+            <UpdatePlan
+              scheduleData={scheduleData}
+              fetchSchedule={fetchSchedule}
+            />
+          }
+        />
+      </Routes>
     </>
   );
 }
