@@ -30,18 +30,29 @@ By pressing "Update Plans" on the nav bar, it routes you to another separate pag
 <br />
 
 <h1>Technologies Used</h1>
+<br />
 For this project, I have used the following technologies :
+<br />
 - Chakra UI (styling of the table)
+<br />
 - Weather API for weather forecasts data (https://www.weatherapi.com)
+<br />
 - Holiday API for holidays data (https://holidayapi.com/countries/sg/2024)
+<br />
 - React
+<br />
 - CSS
+<br />
 - AirTable
+<br />
 
 Link to app: https://plan-ahead-project.vercel.app/
+<br />
 Link to Trello board: https://trello.com/b/NzSng79g/ga-project-2
-
+<br />
 <h1>Planned Future Enhancements</h1>
+<br />
 - To tidy up the styling
+<br />
 - Improve existing feature of the app
 
