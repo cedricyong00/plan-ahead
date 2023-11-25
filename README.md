@@ -45,7 +45,7 @@ For this project, I have used the following technologies :
 <br />
 - AirTable
 <br />
-
+<br />
 Link to app: https://plan-ahead-project.vercel.app/
 <br />
 Link to Trello board: https://trello.com/b/NzSng79g/ga-project-2
