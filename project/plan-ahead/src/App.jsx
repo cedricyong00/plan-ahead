@@ -4,7 +4,7 @@ import HolidayList from "./holidayList";
 import Weather from "./weather";
 import PersonalPlan from "./personalPlan";
 import { useState, useEffect } from "react";
-import CreatePlan from "./CreatePlan";
+import CreatePlan from "./createPlan";
 import UpdatePlan from "./updatePlan";
 import { Link, Route, Routes } from "react-router-dom";
 
