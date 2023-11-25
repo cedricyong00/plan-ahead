@@ -43,15 +43,15 @@ function App() {
   return (
     <>
       <nav style={navFontStyle}>
-        <a href="/" className="NavHeader">
+        <Link to="/" className="NavHeader">
           Home
-        </a>
+        </Link>
         <Link to={"/Add"} className="NavHeader">
           Add Plans
         </Link>
-        <a href="/Update" className="NavHeader">
+        <Link to="/Update" className="NavHeader">
           Update Plans
-        </a>
+        </Link>
       </nav>
 
       <Routes>
