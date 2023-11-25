@@ -6,7 +6,7 @@ import PersonalPlan from "./personalPlan";
 import { useState, useEffect } from "react";
 import CreatePlan from "./CreatePlan";
 import UpdatePlan from "./updatePlan";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 const navFontStyle = {
   fontSize: "5px",
@@ -22,14 +22,13 @@ function App() {
     "https://api.airtable.com/v0/appq8DCLQI9VU4lCa/Personal%20Schedules?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=asc"
   );
 
-  const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN
+  const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN;
 
   // fetches data every time page renders
   async function fetchSchedule() {
     const response = await fetch(apiUrl, {
       headers: {
-        Authorization:
-          `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${TOKEN}`,
       },
       method: "GET",
     });
@@ -47,9 +46,9 @@ function App() {
         <a href="/" className="NavHeader">
           Home
         </a>
-        <a href="/Add" className="NavHeader">
+        <Link to={"/Add"} className="NavHeader">
           Add Plans
-        </a>
+        </Link>
         <a href="/Update" className="NavHeader">
           Update Plans
         </a>
