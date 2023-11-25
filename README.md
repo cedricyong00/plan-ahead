@@ -26,6 +26,7 @@ After inputting, you could simply press on the "Add" button and these data would
 
 By pressing "Update Plans" on the nav bar, it routes you to another separate page where there is a dropdown box for you to select existing events that you have planned previously, and it would update the rest of the fields accordingly if you were to change any of the field's value
 <br />
+<br />
 <img width="735" alt="Screenshot at Nov 25 10-55-20" src="https://github.com/cedricyong00/plan-ahead/assets/140937878/0794becb-f7b5-4b44-a43f-31ea13dd4c62">
 <br />
 
