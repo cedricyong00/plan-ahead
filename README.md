@@ -4,17 +4,21 @@ This project was started as I found myself a frequent Calendar App user, the usa
 Hence, it inspired me to work on a Calendar app myself as most of the time, I found myself switching between weather for the weather forecasts and the calendar app to arrange my meetings, which came to my mind that what if an app could hold all these data, allowing user not having to switch between several apps.
 
 1) Coming to the home page of the app, you would find your personal schedule data table, followed by the holiday data that is filtered down to only upcoming public holiday.
-
+<br />
 Lastly, the weather data table that shows forecasts up to 5 days in advance from the day you visit the app.
 <br />
 <img width="1272" alt="Screenshot at Nov 25 10-47-43" src="https://github.com/cedricyong00/plan-ahead/assets/140937878/c6716321-d430-423a-969e-c4babad2298c">
 <br />
 
 2) By pressing "Add Plans" on the nav bar (Top of the page), it routes you to a separate page where there are input fields for you to add any new plans accordingly with the following 3 fields :
+<br />
 
 Event: What event is it?
+<br />
 Date: Date of the event
+<br />
 Remarks: Any remarks
+<br />
 
 After inputting, you could simply press on the "Add" button and these data would then reflect on the home page where your personal schedule data is shown.
 <br />
