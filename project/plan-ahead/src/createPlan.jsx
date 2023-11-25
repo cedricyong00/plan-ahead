@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 /* eslint-disable no-unused-vars */
-function CreatePlan({ scheduleData, setScheduleData, fetchSchedule }) {
+function CreatePlan({ fetchSchedule }) {
   // State for relevant fields
   const [event, setEvent] = useState("");
   const [date, setDate] = useState("");
