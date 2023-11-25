@@ -22,12 +22,14 @@ function App() {
     "https://api.airtable.com/v0/appq8DCLQI9VU4lCa/Personal%20Schedules?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=asc"
   );
 
+  const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN
+
   // fetches data every time page renders
   async function fetchSchedule() {
     const response = await fetch(apiUrl, {
       headers: {
         Authorization:
-          "Bearer patC4edhed6aQeaB3.8ce40da4208998c565dcf55153392cc95e1b4d1cd9379f4d5f9e2a380b583425",
+          `Bearer ${TOKEN}`,
       },
       method: "GET",
     });

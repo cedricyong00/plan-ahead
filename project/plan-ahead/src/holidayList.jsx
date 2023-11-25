@@ -5,10 +5,12 @@ import HolidayTable from "./holidayTable";
 function HolidayList() {
   const [holiday, setHoliday] = useState([]);
 
+  const TOKEN = import.meta.env.VITE_HOLIDAY_TOKEN
+
   //Holiday API
   const apiUrl = new URL("https://holidayapi.com/v1/holidays");
   apiUrl.search = new URLSearchParams({
-    key: "abdcc0ed-7e2c-4dad-820a-cb4f94c5c1f6",
+    key: `${TOKEN}`,
     country: "SG",
     year: 2022,
     public: true,

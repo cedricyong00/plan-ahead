@@ -23,10 +23,12 @@ function Weather() {
   // Weather Data
   const [weatherData, setWeatherData] = useState([]);
 
+  const TOKEN = import.meta.env.VITE_WEATHER_TOKEN
+
   //Holiday API
   const apiUrl = new URL("https://api.weatherapi.com/v1/forecast.json");
   apiUrl.search = new URLSearchParams({
-    key: "4fcaa18abd40459cb28123335232111",
+    key: `${TOKEN}`,
     q: "Singapore",
     days: 5,
   });
