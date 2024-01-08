@@ -19,6 +19,8 @@ function PersonalPlan({scheduleData, setScheduleData}) {
     height: "240px",
   };
 
+  const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN
+
   // Function to delete record
   async function deleteSchedule(id) {
     const response = await fetch(
@@ -26,7 +28,7 @@ function PersonalPlan({scheduleData, setScheduleData}) {
       {
         headers: {
           Authorization:
-            "Bearer patC4edhed6aQeaB3.8ce40da4208998c565dcf55153392cc95e1b4d1cd9379f4d5f9e2a380b583425",
+            `Bearer ${TOKEN}`,
         },
         method: "DELETE",
       }

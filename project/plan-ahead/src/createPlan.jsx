@@ -3,11 +3,13 @@
 import { useState } from "react";
 
 /* eslint-disable no-unused-vars */
-function CreatePlan({ scheduleData, setScheduleData, fetchSchedule }) {
+function CreatePlan({ fetchSchedule }) {
   // State for relevant fields
   const [event, setEvent] = useState("");
   const [date, setDate] = useState("");
   const [remarks, setRemarks] = useState("");
+
+  const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN
 
   // Function to POST record
   async function updateSchedule(planData) {
@@ -17,7 +19,7 @@ function CreatePlan({ scheduleData, setScheduleData, fetchSchedule }) {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer patC4edhed6aQeaB3.8ce40da4208998c565dcf55153392cc95e1b4d1cd9379f4d5f9e2a380b583425",
+          `Bearer ${TOKEN}`,
         },
         method: "POST",
         body: JSON.stringify({ fields: planData }),

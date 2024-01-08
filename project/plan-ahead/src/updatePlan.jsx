@@ -9,6 +9,8 @@ function UpdatePlan({ scheduleData, fetchSchedule }) {
   const [date, setDate] = useState("");
   const [remarks, setRemarks] = useState("");
 
+  const TOKEN = import.meta.env.VITE_AIRTABLE_TOKEN
+
   //Function to PATCH data
   async function updateScheduleRecord(recordId, updatedFields) {
     const apiUrl = `https://api.airtable.com/v0/appq8DCLQI9VU4lCa/Personal%20Schedules/${recordId}`;
@@ -16,7 +18,7 @@ function UpdatePlan({ scheduleData, fetchSchedule }) {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer patC4edhed6aQeaB3.8ce40da4208998c565dcf55153392cc95e1b4d1cd9379f4d5f9e2a380b583425",
+          Authorization: `Bearer ${TOKEN}`,
         },
         body: JSON.stringify({ fields: updatedFields }),
       });
